@@ -24,7 +24,7 @@ export default function Home() {
     setSearch(e.target.value);
   };
   return (
-    <div>
+    <div style={{ background: "#0e141e" }} >
       <div>
         <Navbar />
       </div>
@@ -116,47 +116,47 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container">
+      <div className="container" style={{ background: "#0e141e" }}>
         {foodCategory !== []
           ? foodCategory.map((data) => {
-              return (
-                <div className="row mb-3">
-                  <div key={data._id} className="fs-3 m-3">
-                    {data.CategoryName}
-                  </div>
-                  <hr />
-                  {FoodData !== []
-                    ? FoodData.filter(
-                        (item) =>
-                          data.CategoryName === item.CategoryName &&
-                          item.name
-                            .toLowerCase()
-                            .includes(search.toLocaleLowerCase())
-                      ).map((filterItems) => {
-                        return (
-                          <div
-                            key={filterItems._id}
-                            className="col-12 col-md-6 col-lg-4"
-                          >
-                            <Card
-                              // img={filterItems.img}
-                              // key={filterItems._id}
-                              // name={filterItems.name}
-                              foodItem={filterItems}
-                              options={filterItems.options[0]}
-                            />
-                          </div>
-                        );
-                      })
-                    : "No such data found"}
+            return (
+              <div className="row mb-3">
+                <div key={data._id} className="fs-3 m-3">
+                  {data.CategoryName}
                 </div>
-              );
-            })
+                <hr />
+                {FoodData !== []
+                  ? FoodData.filter(
+                    (item) =>
+                      data.CategoryName === item.CategoryName &&
+                      item.name
+                        .toLowerCase()
+                        .includes(search.toLocaleLowerCase())
+                  ).map((filterItems) => {
+                    return (
+                      <div
+                        key={filterItems._id}
+                        className="col-12 col-md-6 col-lg-4"
+                      >
+                        <Card
+                          // img={filterItems.img}
+                          // key={filterItems._id}
+                          // name={filterItems.name}
+                          foodItem={filterItems}
+                          options={filterItems.options[0]}
+                        />
+                      </div>
+                    );
+                  })
+                  : "No such data found"}
+              </div>
+            );
+          })
           : ""}
       </div>
       <div>
         <Footer />
       </div>
-    </div>
+    </div >
   );
 }

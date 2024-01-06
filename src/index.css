@@ -16,3 +16,13 @@ code {
 #carousel {
   max-height: 500px;
 }
+/* card Related styles */
+.card-back{
+  background-color: #1d2432 !important;
+}
+.card-text-color{
+  color: white !important;
+}
+.price-color{
+  color: white !important;
+}

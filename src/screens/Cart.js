@@ -8,7 +8,7 @@ export default function Cart() {
   if (data.length === 0) {
     return (
       <div>
-        <div className="m-5 w-100 text-center fs-3">The Cart is Empty!</div>
+        <div className="m-5 w-100 text-center fs-3 price-color">The Cart is Empty!</div>
       </div>
     );
   }
@@ -34,7 +34,7 @@ export default function Cart() {
   return (
     <div>
       <div className="container m-auto mt-5 table-responsive table-responsive-sm table-responsive-md">
-        <table className="table table-hover">
+        <table className="table">
           <thead className="text-success fs-4">
             <tr>
               <th scope="col">#</th>
@@ -45,9 +45,9 @@ export default function Cart() {
               <th scope="col"></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="price-color">
             {data.map((food, index) => (
-              <tr>
+              <tr className="price-color">
                 <th scope="row">{index + 1}</th>
                 <td>{food.name}</td>
                 <td>{food.qty}</td>
@@ -58,6 +58,7 @@ export default function Cart() {
                     <FontAwesomeIcon
                       icon={faTrashCan}
                       size="lg"
+                      style={{ color: "#ffffff", }}
                       onClick={() => {
                         dispatch({ type: "REMOVE", index: index });
                       }}
@@ -69,10 +70,10 @@ export default function Cart() {
           </tbody>
         </table>
         <div>
-          <h1 className="fs-2">Total Price: {totalPrice}/-</h1>
+          <h1 className="fs-2 price-color">Total Price: {totalPrice}/-</h1>
         </div>
         <div>
-          <button className="btn bg-success mt-5 " onClick={handleCheckout}>
+          <button className="btn bg-success mt-5 price-color" onClick={handleCheckout}>
             {" "}
             Check Out{" "}
           </button>
