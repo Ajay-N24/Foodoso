@@ -1,3 +1,6 @@
+## Screenshot:
+<img width="948" alt="image" src="https://github.com/Ajay-N24/Foodoso/assets/130553422/32a0d8a4-6743-427a-b194-26446382c076">
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
